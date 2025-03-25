@@ -134,9 +134,8 @@
 
                 list.innerHTML +=
                     `<div class="px-4 py-3 self-end question-element-ext relative input-background">
-                        <h2 class="mb-3 flex">${userSvg}You</h2>
+                        <h2 class="mb-0 flex">${userSvg}You</h2>
                         <no-export class="mb-2 flex items-center">
-                            <button title="Edit and resend this prompt" class="resend-element-ext p-1.5 flex items-center rounded-lg absolute right-6 top-6">${pencilSvg}</button>
                             <div class="hidden send-cancel-elements-ext flex gap-2">
                                 <button title="Send this prompt" class="send-element-ext p-1 pr-2 flex items-center">${sendSvg}&nbsp;Send</button>
                                 <button title="Cancel" class="cancel-element-ext p-1 pr-2 flex items-center">${cancelSvg}&nbsp;Cancel</button>
@@ -177,7 +176,7 @@
                     existingMessage.innerHTML = markedResponse;
                 } else {
                     list.innerHTML +=
-                        `<div class="px-4 self-end mt-2 answer-element-ext">
+                        `<div class="px-4 self-end answer-element-ext">
                         <div class="result-streaming" id="${message.id}">${markedResponse}</div>
                     </div>`;
                 }
@@ -189,41 +188,6 @@
                     if (responseElement) {
                         responseElement.classList.remove("result-streaming");
                     }
-
-                    preCodeList.forEach((preCode) => {
-                        preCode.classList.add("input-background", "p-4", "pb-2", "block", "whitespace-pre", "overflow-x-scroll");
-                        preCode.parentElement.classList.add("pre-code-element", "relative");
-
-                        const buttonWrapper = document.createElement("no-export");
-                        buttonWrapper.classList.add("code-actions-wrapper", "flex", "gap-3", "pr-2", "pt-1", "pb-1", "flex-wrap", "items-center", "justify-end", "rounded-t-lg", "input-background");
-
-                        // Create copy to clipboard button
-                        const copyButton = document.createElement("button");
-                        copyButton.title = "Copy to clipboard";
-                        copyButton.innerHTML = `${clipboardSvg} Copy`;
-
-                        copyButton.classList.add("code-element-ext", "p-1", "pr-2", "flex", "items-center", "rounded-lg");
-
-                        const insert = document.createElement("button");
-                        insert.title = "Insert the below code to the current file";
-                        insert.innerHTML = `${insertSvg} Insert`;
-
-                        insert.classList.add("edit-element-ext", "p-1", "pr-2", "flex", "items-center", "rounded-lg");
-
-                        const newTab = document.createElement("button");
-                        newTab.title = "Create a new file with the below code";
-                        newTab.innerHTML = `${plusSvg} New`;
-
-                        newTab.classList.add("new-code-element-ext", "p-1", "pr-2", "flex", "items-center", "rounded-lg");
-
-                        buttonWrapper.append(copyButton, insert, newTab);
-
-                        if (preCode.parentNode.previousSibling) {
-                            preCode.parentNode.parentNode.insertBefore(buttonWrapper, preCode.parentNode.previousSibling);
-                        } else {
-                            preCode.parentNode.parentNode.prepend(buttonWrapper);
-                        }
-                    });
                 }
 
                 if (message.autoScroll) {
@@ -922,7 +886,7 @@
         }
 
         /* Add margin to the top of the content to make room for the indicator */
-        #qa-list, #introduction, #conversation-list {
+        #introduction, #conversation-list {
             margin-top: 20px;
         }
 

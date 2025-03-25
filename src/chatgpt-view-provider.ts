@@ -1049,18 +1049,11 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
        </head>
       <body class="overflow-hidden">
 				<div class="flex flex-col h-screen">
-					<div class="absolute top-2 right-2 z-10 flex gap-2">
-						<button id="toggle-prompt-manager" class="p-1.5 rounded-lg" title="Manage Prompts">
+					<div class="absolute top-2 right-4 z-10 flex gap-2">
+						<button id="toggle-prompt-manager" class="p-1 rounded-md" title="Manage Prompts">
 							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" />
 							</svg>
-						</button>
-						<button id="toggle-mcp-servers" class="p-1.5 rounded-lg" title="Manage MCP Servers">
-              <svg width="20" height="20" viewBox="0 0 195 195" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M25 97.8528L92.8823 29.9706C102.255 20.598 117.451 20.598 126.823 29.9706V29.9706C136.196 39.3431 136.196 54.5391 126.823 63.9117L75.5581 115.177" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
-                <path d="M76.2653 114.47L126.823 63.9117C136.196 54.5391 151.392 54.5391 160.765 63.9117L161.118 64.2652C170.491 73.6378 170.491 88.8338 161.118 98.2063L99.7248 159.6C96.6006 162.724 96.6006 167.789 99.7248 170.913L112.331 183.52" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
-                <path d="M109.853 46.9411L59.6482 97.1457C50.2757 106.518 50.2757 121.714 59.6482 131.087V131.087C69.0208 140.459 84.2168 140.459 93.5894 131.087L143.794 80.8822" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
-              </svg>
 						</button>
 					</div>
 
@@ -1075,8 +1068,6 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
                   <li class="features-li w-full border border-zinc-700 p-3 rounded-md">Seamlessly chat with code & docs (@ to add).</li>
                   <li class="features-li w-full border border-zinc-700 p-3 rounded-md">Manage prompts & search custom ones (# to search).</li>
                   <li class="features-li w-full border border-zinc-700 p-3 rounded-md">Enhance code: add tests, fix bugs, and optimize.</li>
-                  <li class="features-li w-full border border-zinc-700 p-3 rounded-md">Auto-detect language with syntax highlighting.</li>
-                  <li class="features-li w-full border border-zinc-700 p-3 rounded-md">Model Context Protocol (MCP) and DeepClaude mode.</li>
                   </ul>
 							</div>
 						</div>
@@ -1137,7 +1128,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 									type="text"
 									rows="3"
 									id="question-input"
-									placeholder="Ask a question..."
+									placeholder="Ask AI"
 									onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
 								<div id="question-input-buttons">
 									<button id="more-button" title="More actions" class="rounded-lg p-0.5">

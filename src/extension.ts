@@ -259,7 +259,7 @@ export async function activate(context: vscode.ExtensionContext) {
       const panel = vscode.window.createWebviewPanel(
         'openai-chat.promptManager',
         'ChatGPT: Prompt Manager',
-        vscode.ViewColumn.Beside,
+        vscode.ViewColumn.Active,
         {
           enableScripts: true,
           retainContextWhenHidden: true,

@@ -18,7 +18,7 @@
 
 body {
     padding: 0 var(--container-padding);
-    color: var(--vscode-foreground);
+    color: var(--vscode-editor-foreground);
     font-size: var(--vscode-editor-font-size);
     font-weight: var(--vscode-font-weight);
     font-family: var(--vscode-font-family);
@@ -47,7 +47,6 @@ li:last-child {
     margin-bottom: 0;
 }
 
-body>*,
 form>* {
     margin-block-start: var(--input-margin-vertical);
     margin-block-end: var(--input-margin-vertical);
@@ -64,23 +63,6 @@ a {
 a:hover,
 a:active {
     color: var(--vscode-textLink-activeForeground);
-}
-
-blockquote,
-dd,
-dl,
-figure,
-h1,
-h3,
-h4,
-h5,
-h6,
-hr,
-p {
-    margin-block-start: 1em !important;
-    margin-block-end: 1em !important;
-    margin-inline-start: 0px !important;
-    margin-inline-end: 0px !important;
 }
 
 hr {
@@ -326,15 +308,10 @@ textarea::placeholder {
     scrollbar-width: none;
 }
 
-.pre-code-element:not(:last-child) {
-    margin-bottom: 2rem;
-}
-
 .code-actions-wrapper {
     opacity: 0.70;
     font-size: 11px;
-    margin-top: 1rem;
-    background-color: var(--vscode-textCodeBlock-background, var(--vscode-editor-background));
+    margin-top: 4px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     padding: 0.5rem;
@@ -696,14 +673,16 @@ pre>code {
     height: 16px;
 }
 
-#toggle-mcp-servers,
+#toggle-prompt-manager,
+/* #toggle-mcp-servers, */
 .send-element-ext,
 #question-input-buttons .ask-button {
     color: var(--vscode-button-foreground) !important;
     background: var(--vscode-button-background) !important;
 }
 
-#toggle-mcp-servers:hover,
+#toggle-prompt-manager:hover,
+/* #toggle-mcp-servers:hover, */
 .send-element-ext:hover,
 #question-input-buttons .ask-button:hover {
     background: var(--vscode-button-hoverBackground) !important;
