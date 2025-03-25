@@ -268,8 +268,8 @@
       "activitybar": [
         {
           "id": "openai-chat-view-container",
-          "title": "ChatGPT",
-          "icon": "images/ai-logo.svg"
+          "title": "AI Chat",
+          "icon": "images/chatgpt-tree.png"
         }
       ]
     },
