@@ -227,7 +227,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
         case "openSettings":
           vscode.commands.executeCommand(
             "workbench.action.openSettings",
-            "@ext:feiskyer.chatgpt-copilot chatgpt.",
+            "@ext:cweijan.chatgpt-copilot chatgpt.",
           );
 
           this.logEvent("settings-opened");
@@ -235,7 +235,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
         case "openSettingsPrompt":
           vscode.commands.executeCommand(
             "workbench.action.openSettings",
-            "@ext:feiskyer.chatgpt-copilot promptPrefix",
+            "@ext:cweijan.chatgpt-copilot promptPrefix",
           );
 
           this.logEvent("settings-prompt-opened");

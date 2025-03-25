@@ -10,8 +10,5 @@ vsc-extension-quickstart.md
 **/.eslintrc.json
 **/*.map
 **/*.ts
-images/**
 temp/**
 .vsix
-!images/ai-logo.png
-!images/ai-logo.svg
