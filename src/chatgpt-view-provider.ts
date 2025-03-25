@@ -227,7 +227,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
         case "openSettings":
           vscode.commands.executeCommand(
             "workbench.action.openSettings",
-            "@ext:cweijan.chatgpt-copilot chatgpt.",
+            "@ext:cweijan.openai-chat chatgpt.",
           );
 
           this.logEvent("settings-opened");
@@ -235,7 +235,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
         case "openSettingsPrompt":
           vscode.commands.executeCommand(
             "workbench.action.openSettings",
-            "@ext:cweijan.chatgpt-copilot promptPrefix",
+            "@ext:cweijan.openai-chat promptPrefix",
           );
 
           this.logEvent("settings-prompt-opened");
@@ -263,10 +263,10 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
           }
           break;
         case "togglePromptManager":
-          await vscode.commands.executeCommand("chatgpt-copilot.togglePromptManager");
+          await vscode.commands.executeCommand("openai-chat.togglePromptManager");
           break;
         case "openMCPServers":
-          await vscode.commands.executeCommand("chatgpt-copilot.openMCPServers");
+          await vscode.commands.executeCommand("openai-chat.openMCPServers");
           break;
         case "searchPrompts":
           await this.handlePromptSearch(data.query, data.responseType);
@@ -291,7 +291,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
           this.handleRemoveFileReference(data.fileName);
           break;
         case "toggleMCPServers":
-          await vscode.commands.executeCommand("chatgpt-copilot.openMCPServers");
+          await vscode.commands.executeCommand("openai-chat.openMCPServers");
           break;
         default:
           break;
@@ -729,7 +729,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 
     // If the ChatGPT view is not in focus/visible; focus on it to render Q&A
     if (this.webView == null) {
-      vscode.commands.executeCommand("chatgpt-copilot.view.focus");
+      vscode.commands.executeCommand("openai-chat.view.focus");
     } else {
       this.webView?.show?.(true);
     }
@@ -854,7 +854,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
             "Open conversation",
           )
           .then(async () => {
-            await vscode.commands.executeCommand("chatgpt-copilot.view.focus");
+            await vscode.commands.executeCommand("openai-chat.view.focus");
           });
       }
     } catch (error: any) {
@@ -880,7 +880,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
           .then(async (choice) => {
             if (choice === "Clear conversation and retry") {
               await vscode.commands.executeCommand(
-                "chatgpt-copilot.clearConversation",
+                "openai-chat.clearConversation",
               );
               await delay(250);
               this.sendApiRequest(prompt, {

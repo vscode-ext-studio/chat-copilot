@@ -37,7 +37,7 @@ export async function activate(context: vscode.ExtensionContext) {
   const provider = new ChatGptViewProvider(context);
 
   const view = vscode.window.registerWebviewViewProvider(
-    "chatgpt-copilot.view",
+    "openai-chat.view",
     provider,
     {
       webviewOptions: {
@@ -47,7 +47,7 @@ export async function activate(context: vscode.ExtensionContext) {
   );
 
   const freeText = vscode.commands.registerCommand(
-    "chatgpt-copilot.freeText",
+    "openai-chat.freeText",
     async () => {
       const value = await vscode.window.showInputBox({
         prompt: "Ask anything...",
@@ -60,21 +60,21 @@ export async function activate(context: vscode.ExtensionContext) {
   );
 
   const resetThread = vscode.commands.registerCommand(
-    "chatgpt-copilot.clearConversation",
+    "openai-chat.clearConversation",
     async () => {
       provider?.sendMessage({ type: "clearConversation" }, true);
     },
   );
 
   const exportConversation = vscode.commands.registerCommand(
-    "chatgpt-copilot.exportConversation",
+    "openai-chat.exportConversation",
     async () => {
       provider?.sendMessage({ type: "exportConversation" }, true);
     },
   );
 
   const clearSession = vscode.commands.registerCommand(
-    "chatgpt-copilot.clearSession",
+    "openai-chat.clearSession",
     () => {
       context.globalState.update("chatgpt-session-token", null);
       context.globalState.update("chatgpt-clearance-token", null);
@@ -143,7 +143,7 @@ export async function activate(context: vscode.ExtensionContext) {
   });
 
   const adhocCommand = vscode.commands.registerCommand(
-    "chatgpt-copilot.adhoc",
+    "openai-chat.adhoc",
     async () => {
       const editor = vscode.window.activeTextEditor;
 
@@ -187,7 +187,7 @@ export async function activate(context: vscode.ExtensionContext) {
   );
 
   const generateCodeCommand = vscode.commands.registerCommand(
-    `chatgpt-copilot.generateCode`,
+    `openai-chat.generateCode`,
     () => {
       const editor = vscode.window.activeTextEditor;
 
@@ -209,7 +209,7 @@ export async function activate(context: vscode.ExtensionContext) {
   const registeredCommands = menuCommands
     .filter((command) => command !== "adhoc" && command !== "generateCode")
     .map((command) =>
-      vscode.commands.registerCommand(`chatgpt-copilot.${command}`, () => {
+      vscode.commands.registerCommand(`openai-chat.${command}`, () => {
         const prompt = vscode.workspace
           .getConfiguration("chatgpt")
           .get<string>(`promptPrefix.${command}`);
@@ -232,19 +232,19 @@ export async function activate(context: vscode.ExtensionContext) {
 
   const promptManager = new PromptManagerProvider(context);
   const promptManagerView = vscode.window.registerWebviewViewProvider(
-    "chatgpt-copilot.promptManager",
+    "openai-chat.promptManager",
     promptManager
   );
 
   const managePrompts = vscode.commands.registerCommand(
-    "chatgpt-copilot.managePrompts",
+    "openai-chat.managePrompts",
     async () => {
-      await vscode.commands.executeCommand("chatgpt-copilot.promptManager.focus");
+      await vscode.commands.executeCommand("openai-chat.promptManager.focus");
     }
   );
 
   const debugPrompts = vscode.commands.registerCommand(
-    "chatgpt-copilot.debugPrompts",
+    "openai-chat.debugPrompts",
     async () => {
       const prompts = context.globalState.get<PromptStore>("prompts");
       vscode.window.showInformationMessage(
@@ -254,10 +254,10 @@ export async function activate(context: vscode.ExtensionContext) {
   );
 
   const togglePromptManager = vscode.commands.registerCommand(
-    "chatgpt-copilot.togglePromptManager",
+    "openai-chat.togglePromptManager",
     async () => {
       const panel = vscode.window.createWebviewPanel(
-        'chatgpt-copilot.promptManager',
+        'openai-chat.promptManager',
         'ChatGPT: Prompt Manager',
         vscode.ViewColumn.Beside,
         {
@@ -298,7 +298,7 @@ export async function activate(context: vscode.ExtensionContext) {
   );
 
   let addCurrentFileCommand = vscode.commands.registerCommand(
-    'chatgpt-copilot.addCurrentFile',
+    'openai-chat.addCurrentFile',
     () => {
       provider.addCurrentFileToContext();
     }
@@ -306,15 +306,15 @@ export async function activate(context: vscode.ExtensionContext) {
 
   const mcpServerProvider = new MCPServerProvider(context);
   const mcpServerView = vscode.window.registerWebviewViewProvider(
-    'chatgpt-copilot.mcpServers',
+    'openai-chat.mcpServers',
     mcpServerProvider
   );
 
   const openMCPServers = vscode.commands.registerCommand(
-    'chatgpt-copilot.openMCPServers',
+    'openai-chat.openMCPServers',
     () => {
       const panel = vscode.window.createWebviewPanel(
-        'chatgpt-copilot.mcpServers',
+        'openai-chat.mcpServers',
         'ChatGPT: MCP Servers',
         vscode.ViewColumn.One,
         {
