@@ -624,13 +624,13 @@
   "scripts": {
     "vscode:prepublish": "rimraf out && yarn run esbuild-base --minify",
     "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
-    "build": "yarn run -S esbuild-base --sourcemap",
+    "build": "yarn run -S esbuild-base",
     "watch": "yarn run -S esbuild-base --sourcemap --watch",
     "fmt": "prettier --write \"src/**/*.ts\"&& yarn run test",
     "update": "npm install -g npm-check-updates && ncu -u && npm install",
     "test": "eslint src --ext ts && tsc --noEmit",
-    "package": "npx @vscode/vsce package --yarn",
-    "publish": "npx @vscode/vsce publish --yarn"
+    "package": "vsce package --no-dependencies",
+    "publish": "vsce publish --no-dependencies"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
