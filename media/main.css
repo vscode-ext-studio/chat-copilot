@@ -243,14 +243,14 @@ textarea::placeholder {
 }
 
 .textarea-wrapper:has(textarea:focus) {
-    border-color: var(--vscode-commandCenter-inactiveBorder);
+    border-color: var(--vscode-focusBorder);
 }
 
 .textarea-wrapper textarea {
     resize: none;
     overflow-x: auto;
     overflow-y: hidden;
-    min-height: 40px;
+    min-height: 55px;
     max-height: 240px;
     line-height: inherit;
     font-family: inherit;
@@ -270,6 +270,8 @@ textarea::placeholder {
     position: relative;
     width: 100%;
     display: grid;
+    padding-top: 5px;
+    padding-left: 2px;
 }
 
 /* 文件引用样式 */
