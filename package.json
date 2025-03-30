@@ -598,7 +598,7 @@
         },
         "chatgpt.autoAddCurrentFile": {
           "type": "boolean",
-          "default": true,
+          "default": false,
           "description": "Automatically add current file to chat context when switching files",
           "order": 122
         },
