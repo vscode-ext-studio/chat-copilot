@@ -4,7 +4,7 @@
   "displayName": "Chat Copilot",
   "icon": "images/chatgpt.png",
   "description": "Chat via OpenAI-Compatible API",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "aiKey": "",
   "repository": {
     "url": "https://github.com/vscode-ext-studio/chat-copilot"
