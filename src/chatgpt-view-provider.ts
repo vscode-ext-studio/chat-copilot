@@ -359,7 +359,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
     const responseInMarkdown = !this.isCodexModel;
     this.sendMessage({
       type: "addResponse",
-      value: this.response,
+      value: this.response || '<div class="canceled-response"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M8.6 1c1.6.1 3.1.9 4.2 2c1.3 1.4 2 3.1 2 5.1c0 1.6-.6 3.1-1.6 4.4c-1 1.2-2.4 2.1-4 2.4s-3.2.1-4.6-.7s-2.5-2-3.1-3.5S.8 7.5 1.3 6c.5-1.6 1.4-2.9 2.8-3.8C5.4 1.3 7 .9 8.6 1m.5 12.9c1.3-.3 2.5-1 3.4-2.1c.8-1.1 1.3-2.4 1.2-3.8c0-1.6-.6-3.2-1.7-4.3c-1-1-2.2-1.6-3.6-1.7c-1.3-.1-2.7.2-3.8 1S2.7 4.9 2.3 6.3c-.4 1.3-.4 2.7.2 4q.9 1.95 2.7 3c1.2.7 2.6.9 3.9.6M7.9 7.5L10.3 5l.7.7l-2.4 2.5l2.4 2.5l-.7.7l-2.4-2.5l-2.4 2.5l-.7-.7l2.4-2.5l-2.4-2.5l.7-.7z" clip-rule="evenodd"/></svg>Canceled</div>',
       done: true,
       id: this.currentMessageId,
       autoScroll: this.autoScroll,
@@ -837,16 +837,6 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
           });
       }
 
-      this.sendMessage({
-        type: "addResponse",
-        value: this.response,
-        done: true,
-        id: this.currentMessageId,
-        messageId: this.currentMessageId,
-        autoScroll: this.autoScroll,
-        responseInMarkdown,
-      });
-
       if (this.subscribeToResponse) {
         vscode.window
           .showInformationMessage(
@@ -930,6 +920,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
    * @param ignoreMessageIfNullWebView We will ignore the command if webView is null/not-focused
    */
   public sendMessage(message: any, ignoreMessageIfNullWebView?: boolean) {
+    // console.log('message', message);
     if (this.webView) {
       this.webView?.webview.postMessage(message);
     } else if (!ignoreMessageIfNullWebView) {
@@ -1105,11 +1096,11 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 							<div class="bounce3"></div>
 						</div>
 
-						<button id="stop-button" class="btn btn-primary flex items-center gap-x-1 p-1 pr-2 rounded-md ml-auto mr-4">
+						<button id="stop-button" class="btn secondary flex items-center gap-x-1 p-1 pr-2 rounded-md ml-auto mr-4">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="color: var(--vscode-debugIcon-stopForeground)">
               <path fill="currentColor" fill-rule="evenodd" d="m13 2l1 1v10l-1 1H3l-1-1V3l1-1zm-.254 1.25H3.255v9.5h9.491z" clip-rule="evenodd"/>
               </svg>
-              Stop responding</button>
+              Stop</button>
 					</div>
 
 					<div class="p-4 flex items-center pt-2">
@@ -1124,7 +1115,7 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
 									onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
 								<div id="question-input-buttons">
 									<button id="ask-button" title="Submit prompt" class="ask-button rounded-lg p-0.5">
-										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
 									</button>
 								</div>
 							</div>

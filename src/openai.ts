@@ -155,9 +155,11 @@ export async function chatGpt(provider: ChatGptViewProvider, question: string, i
                     break;
                 }
                 case 'error':
+                    const msg = (part.error as any).message || part.error;
+                    if (typeof msg == 'string' && msg.includes('aborted')) break;
                     provider.sendMessage({
                         type: "addError",
-                        value: part.error,
+                        value: msg,
                         autoScroll: provider.autoScroll,
                     });
                     break;

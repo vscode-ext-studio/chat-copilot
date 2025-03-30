@@ -177,17 +177,8 @@
                 } else {
                     list.innerHTML +=
                         `<div class="px-4 self-end answer-element-ext">
-                        <div class="result-streaming" id="${message.id}">${markedResponse}</div>
+                        <div id="${message.id}">${markedResponse}</div>
                     </div>`;
-                }
-
-                if (message.done) {
-                    const preCodeList = list.lastChild.querySelectorAll("pre > code");
-
-                    const responseElement = document.getElementById(message.id);
-                    if (responseElement) {
-                        responseElement.classList.remove("result-streaming");
-                    }
                 }
 
                 if (message.autoScroll) {
