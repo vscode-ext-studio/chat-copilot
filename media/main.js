@@ -393,15 +393,6 @@
     document.addEventListener("click", (e) => {
         const targetButton = e.target.closest('button');
 
-        if (targetButton?.id === "more-button") {
-            e.preventDefault();
-            document.getElementById('chat-button-wrapper')?.classList.toggle("hidden");
-
-            return;
-        } else {
-            document.getElementById('chat-button-wrapper')?.classList.add("hidden");
-        }
-
         if (e.target?.id === "settings-button") {
             e.preventDefault();
             vscode.postMessage({
@@ -569,14 +560,6 @@
                 value: targetButton.parentElement?.nextElementSibling?.lastChild?.textContent,
             });
 
-            return;
-        }
-
-        if (targetButton?.id === "toggle-prompt-manager") {
-            e.preventDefault();
-            vscode.postMessage({
-                type: "togglePromptManager"
-            });
             return;
         }
 
@@ -777,11 +760,6 @@
             indicator.innerHTML = "";
         }
 
-        // Insert after the toggle-prompt-manager button
-        const header = document.querySelector('.flex.flex-col.h-screen');
-        if (header) {
-            header.insertBefore(indicator, header.firstChild);
-        }
     }
 
     // Add tooltip styles to the styleSheet
@@ -824,28 +802,6 @@
         }
     `;
 
-    // Update the prompt manager button in the HTML template
-    function setupPromptManagerButton() {
-        const promptManager = document.getElementById('toggle-prompt-manager');
-        if (promptManager) {
-            promptManager.innerHTML = `
-                ${promptManagerIcon}
-                <div class="tooltip right">Manage system prompts (use # to search prompts)</div>
-            `;
-
-            // Add hover handlers for tooltip
-            promptManager.addEventListener('mouseenter', () => {
-                promptManager.querySelector('.tooltip').classList.add('show');
-            });
-            promptManager.addEventListener('mouseleave', () => {
-                promptManager.querySelector('.tooltip').classList.remove('show');
-            });
-        }
-    }
-
-    // Call setupPromptManagerButton after DOM is loaded
-    document.addEventListener('DOMContentLoaded', setupPromptManagerButton);
-
     // Update the styles
     styleSheet.textContent += `
         .active-prompt-indicator {
@@ -878,11 +834,6 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             text-align: center;
-        }
-
-        /* Ensure the prompt manager button doesn't interfere */
-        #toggle-prompt-manager {
-            z-index: 999;
         }
 
         /* Add margin to the top of the content to make room for the indicator */

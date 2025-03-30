@@ -675,21 +675,13 @@ pre>code {
     height: 16px;
 }
 
-#toggle-prompt-manager,
-/* #toggle-mcp-servers, */
 .send-element-ext,
 #question-input-buttons .ask-button {
     color: var(--vscode-button-foreground) !important;
     background: var(--vscode-button-background) !important;
 }
 
-#toggle-prompt-manager:hover,
-/* #toggle-mcp-servers:hover, */
 .send-element-ext:hover,
 #question-input-buttons .ask-button:hover {
     background: var(--vscode-button-hoverBackground) !important;
-}
-
-.chat-button-wrapper {
-    border-color: var(--vscode-quickInputTitle-background);
 }

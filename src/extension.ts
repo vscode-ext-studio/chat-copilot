@@ -85,6 +85,20 @@ export async function activate(context: vscode.ExtensionContext) {
     },
   );
 
+  vscode.commands.registerCommand(
+    "openai-chat.openModelSettings",
+    () => {
+      vscode.commands.executeCommand("workbench.action.openSettings", "@ext:cweijan.openai-chat chatgpt");
+    },
+  );
+
+  vscode.commands.registerCommand(
+    "openai-chat.openPromptSettings",
+    () => {
+      vscode.commands.executeCommand("workbench.action.openSettings", "@ext:cweijan.openai-chat promptPrefix");
+    },
+  );
+
   const configChanged = vscode.workspace.onDidChangeConfiguration((e) => {
     if (e.affectsConfiguration("chatgpt.response.showNotification")) {
       provider.subscribeToResponse =

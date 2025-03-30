@@ -43,6 +43,13 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "submenus": [
+      {
+        "id": "openai-chat.moreActionsMenu",
+        "label": "Views and More Actions",
+        "icon": "$(ellipsis)"
+      }
+    ],
     "menus": {
       "editor/context": [
         {
@@ -96,7 +103,31 @@
           "when": "editorHasSelection && customPrompt2-enabled"
         }
       ],
+      "openai-chat.moreActionsMenu": [
+        {
+          "command": "openai-chat.openModelSettings",
+          "group": "moreActions@1"
+        },
+        {
+          "command": "openai-chat.openPromptSettings",
+          "group": "moreActions@3"
+        },
+        {
+          "command": "openai-chat.togglePromptManager",
+          "group": "moreActions@5"
+        }
+      ],
       "view/title": [
+        {
+          "command": "openai-chat.clearConversation",
+          "when": "view == openai-chat.view",
+          "group": "navigation"
+        },
+        {
+          "submenu": "openai-chat.moreActionsMenu",
+          "when": "view == openai-chat.view",
+          "group": "navigation"
+        },
         {
           "command": "openai-chat.openPromptManager",
           "when": "view == promptManager",
@@ -174,11 +205,11 @@
     "commands": [
       {
         "command": "openai-chat.freeText",
-        "title": "ChatGPT: Ask anything"
+        "title": "Ask anything"
       },
       {
         "command": "openai-chat.clearSession",
-        "title": "ChatGPT: Reset session"
+        "title": "Reset session"
       },
       {
         "command": "openai-chat.generateCode",
@@ -187,68 +218,77 @@
       },
       {
         "command": "openai-chat.addTests",
-        "title": "ChatGPT: Add tests",
+        "title": "Add tests",
         "enablement": "editorHasSelection"
       },
       {
         "command": "openai-chat.findProblems",
-        "title": "ChatGPT: Find bugs",
+        "title": "Find bugs",
         "enablement": "editorHasSelection"
       },
       {
         "command": "openai-chat.optimize",
-        "title": "ChatGPT: Optimize",
+        "title": "Optimize",
         "enablement": "editorHasSelection"
       },
       {
         "command": "openai-chat.explain",
-        "title": "ChatGPT: Explain",
+        "title": "Explain",
         "enablement": "editorHasSelection"
       },
       {
         "command": "openai-chat.addComments",
-        "title": "ChatGPT: Add comments",
+        "title": "Add comments",
         "enablement": "editorHasSelection"
       },
       {
         "command": "openai-chat.completeCode",
-        "title": "ChatGPT: Complete code",
+        "title": "Complete code",
         "enablement": "editorHasSelection"
       },
       {
         "command": "openai-chat.adhoc",
-        "title": "ChatGPT: Ad-hoc prompt",
+        "title": "Ad-hoc prompt",
         "enablement": "editorHasSelection"
       },
       {
         "command": "openai-chat.customPrompt1",
-        "title": "ChatGPT: Custom prompt 1",
+        "title": "Custom prompt 1",
         "enablement": "editorHasSelection"
       },
       {
         "command": "openai-chat.customPrompt2",
-        "title": "ChatGPT: Custom prompt 2",
+        "title": "Custom prompt 2",
         "enablement": "editorHasSelection"
       },
       {
         "command": "openai-chat.clearConversation",
-        "title": "ChatGPT: Clear conversation"
+        "title": "New Chat",
+        "icon": "$(add)"
+      },
+      {
+        "command": "openai-chat.openModelSettings",
+        "title": "Model Settings"
+      },
+      {
+        "command": "openai-chat.openPromptSettings",
+        "title": "Prompt Settings"
       },
       {
         "command": "openai-chat.exportConversation",
-        "title": "ChatGPT: Export conversation"
+        "title": "Export conversation"
       },
       {
         "command": "openai-chat.managePrompts",
-        "title": "ChatGPT: Manage Prompts"
+        "title": "Manage Prompts"
       },
       {
         "command": "openai-chat.debugPrompts",
-        "title": "ChatGPT: Debug Stored Prompts"
+        "title": "Debug Stored Prompts"
       },
       {
         "command": "openai-chat.togglePromptManager",
-        "title": "ChatGPT: Toggle Prompt Manager"
+        "title": "Open Prompt Manager"
       },
       {
         "command": "openai-chat.addCurrentFile",
@@ -257,11 +297,11 @@
       },
       {
         "command": "openai-chat.openPromptManager",
-        "title": "ChatGPT: Open Prompt Manager"
+        "title": "Open Prompt Manager"
       },
       {
         "command": "openai-chat.openMCPServers",
-        "title": "ChatGPT: Open MCP Servers"
+        "title": "Open MCP Servers"
       }
     ],
     "viewsContainers": {
