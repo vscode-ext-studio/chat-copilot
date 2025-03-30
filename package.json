@@ -7,7 +7,7 @@
   "version": "5.0.0",
   "aiKey": "",
   "repository": {
-    "url": "https://github.com/cweijan/openai-chat"
+    "url": "https://github.com/vscode-ext-studio/openai-chat"
   },
   "engines": {
     "vscode": "^1.96.0"
