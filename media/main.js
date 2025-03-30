@@ -102,7 +102,8 @@
 
         const checkAndScroll = () => {
             if (autoScroll && message.autoScroll) {
-                list.lastChild?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+                list.scrollTo(0, list.scrollHeight);
+                // list.lastChild?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
             }
         };
 
