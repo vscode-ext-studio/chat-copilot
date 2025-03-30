@@ -1049,24 +1049,24 @@ export default class ChatGptViewProvider implements vscode.WebviewViewProvider {
        </head>
       <body class="overflow-hidden">
 				<div class="flex flex-col h-screen">
-					<div id="introduction" class="flex flex-col justify-between h-full justify-center px-6 w-full relative login-screen overflow-auto">
-						<div class="flex items-start text-center features-block my-5">
-							<div class="flex flex-col gap-3.5 flex-1">
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-6 h-6 m-auto">
+					<div id="introduction" class="flex flex-col items-center justify-center h-full p-6 pb-24">
+						<div class="mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-10 h-10 m-auto">
 									<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path>
 								</svg>
-								<h2>Features</h2>
-								<ul class="flex flex-col gap-3.5 text-xs">
-                  <li class="features-li w-full border border-zinc-700 p-3 rounded-md">Seamlessly chat with code & docs (@ to add).</li>
-                  <li class="features-li w-full border border-zinc-700 p-3 rounded-md">Manage prompts & search custom ones (# to search).</li>
-                  <li class="features-li w-full border border-zinc-700 p-3 rounded-md">Enhance code: add tests, fix bugs, and optimize.</li>
-                  </ul>
-							</div>
 						</div>
-						<div class="flex flex-col gap-4 h-full items-center justify-end text-center">
-							<p class="max-w-sm text-center text-xs text-slate-500">
-								<a title="" id="settings-button" href="#">Update settings</a>&nbsp; | &nbsp;<a title="" id="settings-prompt-button" href="#">Update prompts</a>
-							</p>
+						<h1 class="text-2xl mb-4">Ask Copilot</h1>
+						<p class="text-center mb-6">Copilot is powered by AI, so mistakes are possible.</p>
+						<div class="flex flex-col gap-2 w-full max-w-md">
+							<div class="flex items-center gap-2 justify-center">
+								<span># to attach context</span>
+							</div>
+							<div class="flex items-center gap-2 justify-center">
+								<span>@ to chat with extensions</span>
+							</div>
+							<div class="flex items-center gap-2 justify-center">
+								<span>Type / to use commands</span>
+							</div>
 						</div>
 					</div>
 

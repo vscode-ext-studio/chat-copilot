@@ -1,13 +1,13 @@
 {
   "name": "openai-chat",
   "publisher": "cweijan",
-  "displayName": "OpenAI Chat",
+  "displayName": "Chat Copilot",
   "icon": "images/chatgpt.png",
   "description": "Chat via OpenAI-Compatible API",
   "version": "5.0.0",
   "aiKey": "",
   "repository": {
-    "url": "https://github.com/vscode-ext-studio/openai-chat"
+    "url": "https://github.com/vscode-ext-studio/chat-copilot"
   },
   "engines": {
     "vscode": "^1.68.0"

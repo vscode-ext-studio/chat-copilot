@@ -836,11 +836,6 @@
             text-align: center;
         }
 
-        /* Add margin to the top of the content to make room for the indicator */
-        #introduction, #conversation-list {
-            margin-top: 20px;
-        }
-
         .file-reference-tag {
             display: inline-flex;
             align-items: center;

@@ -35,8 +35,8 @@ ol ol,
 ul ul,
 ol ul,
 ul ol {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 li {
@@ -53,7 +53,7 @@ form>* {
 }
 
 *:focus {
-    outline-color: var(--vscode-focusBorder) !important;
+    outline-color: var(--vscode-focusBorder);
 }
 
 a {
@@ -70,55 +70,55 @@ hr {
 }
 
 h1 {
-    font-size: 1.17em !important;
-    margin-top: 0.67em !important;
-    margin-bottom: 0.67em !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    font-weight: bold !important;
+    font-size: 1.17em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
 }
 
 h2 {
-    font-size: 1em !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    font-weight: bold !important;
+    font-size: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
 }
 
 h3 {
-    font-size: .93em !important;
-    margin-top: 1em !important;
-    margin-bottom: 1em !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    font-weight: bold !important;
+    font-size: .93em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
 }
 
 h4 {
-    font-size: .85em !important;
-    margin-top: 1.33em !important;
-    margin-bottom: 1.33em !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    font-weight: bold !important;
+    font-size: .85em;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
 }
 
 h5 {
-    font-size: .83em !important;
-    margin-top: 1.67em !important;
-    margin-bottom: 1.67em !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    font-weight: bold !important;
+    font-size: .83em;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
 }
 
 h6 {
-    font-size: .8em !important;
-    margin-top: 2.33em !important;
-    margin-bottom: 2.33em !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    font-weight: bold !important;
+    font-size: .8em;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
 }
 
 code {
@@ -130,17 +130,13 @@ button {
     padding: var(--input-padding-vertical) var(--input-padding-horizontal);
     text-align: center;
     outline: 1px solid transparent;
-    outline-offset: 2px !important;
-    color: var(--vscode-button-secondaryForeground) !important;
-    background: var(--vscode-button-secondaryBackground) !important;
+    outline-offset: 2px;
+    color: var(--vscode-button-foreground);
+    background: var(--vscode-button-background);
 }
 
 button:hover {
-    background: var(--vscode-button-secondaryHoverBackground) !important;
-}
-
-button:hover svg {
-    stroke: var(--vscode-button-secondaryForeground) !important;
+    background: var(--vscode-button-hoverBackground);
 }
 
 button:focus {
@@ -237,7 +233,7 @@ textarea::placeholder {
     display: grid;
     position: relative;
     width: 100%;
-    border-radius: 4px;
+    border-radius: 8px;
     background-color: var(--vscode-input-background);
     border: 1px solid transparent;
 }
@@ -656,32 +652,13 @@ pre>code {
     z-index: 1;
 }
 
-/* 调整按钮样式 */
-#question-input-buttons button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-    min-height: 28px;
-    padding: 0;
-    border-radius: 4px;
-    background: var(--vscode-button-secondaryBackground);
-}
-
-#question-input-buttons svg {
-    width: 16px;
-    height: 16px;
-}
-
-.send-element-ext,
 #question-input-buttons .ask-button {
-    color: var(--vscode-button-foreground) !important;
-    background: var(--vscode-button-background) !important;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: transparent !important;
+    color: var(--vscode-icon-foreground) !important;
 }
 
-.send-element-ext:hover,
 #question-input-buttons .ask-button:hover {
-    background: var(--vscode-button-hoverBackground) !important;
+    background-color: var(--vscode-toolbar-hoverBackground) !important;
 }

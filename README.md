@@ -1,4 +1,4 @@
-<h3 align="center"><img src="https://raw.githubusercontent.com/vscode-ext-studio/openai-chat/main/images/chatgpt.png" height="64"><br>OpenAI Chat</h3>
+<h3 align="center"><img src="https://raw.githubusercontent.com/vscode-ext-studio/openai-chat/main/images/chatgpt.png" height="64"><br>Chat Copilot</h3>
 
 <p align="center">
     <a href="https://marketplace.visualstudio.com/items?itemName=cweijan.openai-chat" alt="Marketplace version">
@@ -14,7 +14,7 @@
 
 ## The Most Loved Open-Source ChatGPT Extension for VS Code
 
-OpenAI Chat is a powerful and telemetry-free extension for Visual Studio Code, bringing the capabilities of ChatGPT directly into your coding environment.
+Chat Copilot is a powerful and telemetry-free extension for Visual Studio Code, bringing the capabilities of ChatGPT directly into your coding environment.
 
 ## Features
 
