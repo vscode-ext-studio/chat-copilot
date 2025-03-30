@@ -1,4 +1,4 @@
-<h3 align="center"><img src="https://raw.githubusercontent.com/cweijan/openai-chat/main/images/chatgpt.png" height="64"><br>OpenAI Chat</h3>
+<h3 align="center"><img src="https://raw.githubusercontent.com/vscode-ext-studio/openai-chat/main/images/chatgpt.png" height="64"><br>OpenAI Chat</h3>
 
 <p align="center">
     <a href="https://marketplace.visualstudio.com/items?itemName=cweijan.openai-chat" alt="Marketplace version">
@@ -7,7 +7,7 @@
     <a href="https://marketplace.visualstudio.com/items?itemName=cweijan.openai-chat" alt="Marketplace download count">
         <img src="https://img.shields.io/visual-studio-marketplace/d/cweijan.openai-chat?color=blueviolet&label=Downloads" />
     </a>
-    <a href="https://github.com/cweijan/openai-chat" alt="Github star count">
+    <a href="https://github.com/vscode-ext-studio/openai-chat" alt="Github star count">
         <img src="https://img.shields.io/github/stars/cweijan/openai-chat?color=blue&label=Github%20Stars" />
     </a>
 </p>

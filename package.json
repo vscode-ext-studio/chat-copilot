@@ -10,7 +10,7 @@
     "url": "https://github.com/vscode-ext-studio/openai-chat"
   },
   "engines": {
-    "vscode": "^1.96.0"
+    "vscode": "^1.68.0"
   },
   "categories": [
     "AI",
@@ -622,15 +622,13 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "rimraf out && yarn run esbuild-base --minify",
     "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
     "build": "yarn run -S esbuild-base",
     "watch": "yarn run -S esbuild-base --sourcemap --watch",
-    "fmt": "prettier --write \"src/**/*.ts\"&& yarn run test",
-    "update": "npm install -g npm-check-updates && ncu -u && npm install",
     "test": "eslint src --ext ts && tsc --noEmit",
     "package": "vsce package --no-dependencies",
-    "publish": "vsce publish --no-dependencies"
+    "publish": "vsce publish --no-dependencies",
+    "vscode:prepublish": "rimraf out && yarn run esbuild-base --minify"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
@@ -638,7 +636,7 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.13.10",
     "@types/uuid": "^10.0.0",
-    "@types/vscode": "^1.96.0",
+    "@types/vscode": "^1.68.0",
     "@types/vscode-webview": "^1.57.5",
     "@vscode/test-electron": "^2.4.1",
     "@vscode/vsce": "^3.3.0",
@@ -646,7 +644,6 @@
     "eslint": "^9.22.0",
     "glob": "^11.0.1",
     "mocha": "^11.1.0",
-    "prettier": "^3.5.3",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.2",
     "webpack": "^5.98.0"
