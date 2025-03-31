@@ -45,7 +45,7 @@
   "contributes": {
     "submenus": [
       {
-        "id": "openai-chat.moreActionsMenu",
+        "id": "chat-copilot.moreActionsMenu",
         "label": "Views and More Actions",
         "icon": "$(ellipsis)"
       }
@@ -53,88 +53,88 @@
     "menus": {
       "editor/context": [
         {
-          "command": "openai-chat.generateCode",
+          "command": "chat-copilot.generateCode",
           "group": "chatGpt@1",
           "when": "editorHasSelection && generateCode-enabled"
         },
         {
-          "command": "openai-chat.addTests",
+          "command": "chat-copilot.addTests",
           "group": "chatGpt@2",
           "when": "editorHasSelection && addTests-enabled"
         },
         {
-          "command": "openai-chat.findProblems",
+          "command": "chat-copilot.findProblems",
           "group": "chatGpt@3",
           "when": "editorHasSelection && findProblems-enabled"
         },
         {
-          "command": "openai-chat.optimize",
+          "command": "chat-copilot.optimize",
           "group": "chatGpt@4",
           "when": "editorHasSelection && optimize-enabled"
         },
         {
-          "command": "openai-chat.explain",
+          "command": "chat-copilot.explain",
           "group": "chatGpt@5",
           "when": "editorHasSelection && explain-enabled"
         },
         {
-          "command": "openai-chat.addComments",
+          "command": "chat-copilot.addComments",
           "group": "chatGpt@6",
           "when": "editorHasSelection && addComments-enabled"
         },
         {
-          "command": "openai-chat.completeCode",
+          "command": "chat-copilot.completeCode",
           "group": "chatGpt@7",
           "when": "editorHasSelection && completeCode-enabled"
         },
         {
-          "command": "openai-chat.adhoc",
+          "command": "chat-copilot.adhoc",
           "group": "chatGpt@8",
           "when": "editorHasSelection && adhoc-enabled"
         },
         {
-          "command": "openai-chat.customPrompt1",
+          "command": "chat-copilot.customPrompt1",
           "group": "chatGpt@9",
           "when": "editorHasSelection && customPrompt1-enabled"
         },
         {
-          "command": "openai-chat.customPrompt2",
+          "command": "chat-copilot.customPrompt2",
           "group": "chatGpt@10",
           "when": "editorHasSelection && customPrompt2-enabled"
         }
       ],
-      "openai-chat.moreActionsMenu": [
+      "chat-copilot.moreActionsMenu": [
         {
-          "command": "openai-chat.openModelSettings",
+          "command": "chat-copilot.openModelSettings",
           "group": "moreActions@1"
         },
         {
-          "command": "openai-chat.openPromptSettings",
+          "command": "chat-copilot.openPromptSettings",
           "group": "moreActions@3"
         },
         {
-          "command": "openai-chat.togglePromptManager",
+          "command": "chat-copilot.togglePromptManager",
           "group": "moreActions@5"
         }
       ],
       "view/title": [
         {
-          "command": "openai-chat.clearConversation",
-          "when": "view == openai-chat.view",
+          "command": "chat-copilot.clearConversation",
+          "when": "view == chat-copilot.view",
           "group": "navigation"
         },
         {
-          "submenu": "openai-chat.moreActionsMenu",
-          "when": "view == openai-chat.view",
+          "submenu": "chat-copilot.moreActionsMenu",
+          "when": "view == chat-copilot.view",
           "group": "navigation"
         },
         {
-          "command": "openai-chat.openPromptManager",
+          "command": "chat-copilot.openPromptManager",
           "when": "view == promptManager",
           "group": "navigation"
         },
         {
-          "command": "openai-chat.openMCPServers",
+          "command": "chat-copilot.openMCPServers",
           "when": "view == mcpServersView",
           "group": "navigation"
         }
@@ -142,61 +142,61 @@
     },
     "keybindings": [
       {
-        "command": "openai-chat.generateCode",
+        "command": "chat-copilot.generateCode",
         "key": "ctrl+shift+a",
         "mac": "cmd+shift+a",
         "when": "editorHasSelection"
       },
       {
-        "command": "openai-chat.addTests",
+        "command": "chat-copilot.addTests",
         "key": "ctrl+k ctrl+shift+1",
         "mac": "cmd+k cmd+shift+1",
         "when": "editorHasSelection"
       },
       {
-        "command": "openai-chat.findProblems",
+        "command": "chat-copilot.findProblems",
         "key": "ctrl+k ctrl+shift+2",
         "mac": "cmd+k cmd+shift+2",
         "when": "editorHasSelection"
       },
       {
-        "command": "openai-chat.optimize",
+        "command": "chat-copilot.optimize",
         "key": "ctrl+k ctrl+shift+3",
         "mac": "cmd+k cmd+shift+3",
         "when": "editorHasSelection"
       },
       {
-        "command": "openai-chat.explain",
+        "command": "chat-copilot.explain",
         "key": "ctrl+k ctrl+shift+4",
         "mac": "cmd+k cmd+shift+4",
         "when": "editorHasSelection"
       },
       {
-        "command": "openai-chat.addComments",
+        "command": "chat-copilot.addComments",
         "key": "ctrl+k ctrl+shift+5",
         "mac": "cmd+k cmd+shift+5",
         "when": "editorHasSelection"
       },
       {
-        "command": "openai-chat.completeCode",
+        "command": "chat-copilot.completeCode",
         "key": "ctrl+k ctrl+shift+6",
         "mac": "cmd+k cmd+shift+6",
         "when": "editorHasSelection"
       },
       {
-        "command": "openai-chat.adhoc",
+        "command": "chat-copilot.adhoc",
         "key": "ctrl+k ctrl+shift+7",
         "mac": "cmd+k cmd+shift+7",
         "when": "editorHasSelection"
       },
       {
-        "command": "openai-chat.customPrompt1",
+        "command": "chat-copilot.customPrompt1",
         "key": "ctrl+k ctrl+shift+8",
         "mac": "cmd+k cmd+shift+8",
         "when": "editorHasSelection"
       },
       {
-        "command": "openai-chat.customPrompt2",
+        "command": "chat-copilot.customPrompt2",
         "key": "ctrl+k ctrl+shift+9",
         "mac": "cmd+k cmd+shift+9",
         "when": "editorHasSelection"
@@ -204,120 +204,120 @@
     ],
     "commands": [
       {
-        "command": "openai-chat.freeText",
+        "command": "chat-copilot.freeText",
         "title": "Ask anything"
       },
       {
-        "command": "openai-chat.clearSession",
+        "command": "chat-copilot.clearSession",
         "title": "Reset session"
       },
       {
-        "command": "openai-chat.generateCode",
+        "command": "chat-copilot.generateCode",
         "title": "ChatGPT-Codex: Generate code",
         "enablement": "editorHasSelection"
       },
       {
-        "command": "openai-chat.addTests",
+        "command": "chat-copilot.addTests",
         "title": "Add tests",
         "enablement": "editorHasSelection"
       },
       {
-        "command": "openai-chat.findProblems",
+        "command": "chat-copilot.findProblems",
         "title": "Find bugs",
         "enablement": "editorHasSelection"
       },
       {
-        "command": "openai-chat.optimize",
+        "command": "chat-copilot.optimize",
         "title": "Optimize",
         "enablement": "editorHasSelection"
       },
       {
-        "command": "openai-chat.explain",
+        "command": "chat-copilot.explain",
         "title": "Explain",
         "enablement": "editorHasSelection"
       },
       {
-        "command": "openai-chat.addComments",
+        "command": "chat-copilot.addComments",
         "title": "Add comments",
         "enablement": "editorHasSelection"
       },
       {
-        "command": "openai-chat.completeCode",
+        "command": "chat-copilot.completeCode",
         "title": "Complete code",
         "enablement": "editorHasSelection"
       },
       {
-        "command": "openai-chat.adhoc",
+        "command": "chat-copilot.adhoc",
         "title": "Ad-hoc prompt",
         "enablement": "editorHasSelection"
       },
       {
-        "command": "openai-chat.customPrompt1",
+        "command": "chat-copilot.customPrompt1",
         "title": "Custom prompt 1",
         "enablement": "editorHasSelection"
       },
       {
-        "command": "openai-chat.customPrompt2",
+        "command": "chat-copilot.customPrompt2",
         "title": "Custom prompt 2",
         "enablement": "editorHasSelection"
       },
       {
-        "command": "openai-chat.clearConversation",
+        "command": "chat-copilot.clearConversation",
         "title": "New Chat",
         "icon": "$(add)"
       },
       {
-        "command": "openai-chat.openModelSettings",
+        "command": "chat-copilot.openModelSettings",
         "title": "Model Settings"
       },
       {
-        "command": "openai-chat.openPromptSettings",
+        "command": "chat-copilot.openPromptSettings",
         "title": "Prompt Settings"
       },
       {
-        "command": "openai-chat.exportConversation",
+        "command": "chat-copilot.exportConversation",
         "title": "Export conversation"
       },
       {
-        "command": "openai-chat.managePrompts",
+        "command": "chat-copilot.managePrompts",
         "title": "Manage Prompts"
       },
       {
-        "command": "openai-chat.debugPrompts",
+        "command": "chat-copilot.debugPrompts",
         "title": "Debug Stored Prompts"
       },
       {
-        "command": "openai-chat.togglePromptManager",
+        "command": "chat-copilot.togglePromptManager",
         "title": "Open Prompt Manager"
       },
       {
-        "command": "openai-chat.addCurrentFile",
+        "command": "chat-copilot.addCurrentFile",
         "title": "Add Current File to Chat Context",
         "category": "ChatGPT"
       },
       {
-        "command": "openai-chat.openPromptManager",
+        "command": "chat-copilot.openPromptManager",
         "title": "Open Prompt Manager"
       },
       {
-        "command": "openai-chat.openMCPServers",
+        "command": "chat-copilot.openMCPServers",
         "title": "Open MCP Servers"
       }
     ],
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "openai-chat-view-container",
+          "id": "chat-copilot-view-container",
           "title": "AI Chat",
           "icon": "images/chatgpt-tree.png"
         }
       ]
     },
     "views": {
-      "openai-chat-view-container": [
+      "chat-copilot-view-container": [
         {
           "type": "webview",
-          "id": "openai-chat.view",
+          "id": "chat-copilot.view",
           "name": "ChatGPT"
         }
       ]

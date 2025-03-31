@@ -1,14 +1,14 @@
-<h3 align="center"><img src="https://raw.githubusercontent.com/vscode-ext-studio/openai-chat/main/images/chatgpt.png" height="64"><br>Chat Copilot</h3>
+<h3 align="center"><img src="https://raw.githubusercontent.com/vscode-ext-studio/chat-copilot/main/images/chatgpt.png" height="64"><br>Chat Copilot</h3>
 
 <p align="center">
-    <a href="https://marketplace.visualstudio.com/items?itemName=cweijan.openai-chat" alt="Marketplace version">
-        <img src="https://img.shields.io/visual-studio-marketplace/v/cweijan.openai-chat?color=orange&label=VS%20Code" />
+    <a href="https://marketplace.visualstudio.com/items?itemName=cweijan.chat-copilot" alt="Marketplace version">
+        <img src="https://img.shields.io/visual-studio-marketplace/v/cweijan.chat-copilot?color=orange&label=VS%20Code" />
     </a>
-    <a href="https://marketplace.visualstudio.com/items?itemName=cweijan.openai-chat" alt="Marketplace download count">
-        <img src="https://img.shields.io/visual-studio-marketplace/d/cweijan.openai-chat?color=blueviolet&label=Downloads" />
+    <a href="https://marketplace.visualstudio.com/items?itemName=cweijan.chat-copilot" alt="Marketplace download count">
+        <img src="https://img.shields.io/visual-studio-marketplace/d/cweijan.chat-copilot?color=blueviolet&label=Downloads" />
     </a>
-    <a href="https://github.com/vscode-ext-studio/openai-chat" alt="Github star count">
-        <img src="https://img.shields.io/github/stars/cweijan/openai-chat?color=blue&label=Github%20Stars" />
+    <a href="https://github.com/vscode-ext-studio/chat-copilot" alt="Github star count">
+        <img src="https://img.shields.io/github/stars/cweijan/chat-copilot?color=blue&label=Github%20Stars" />
     </a>
 </p>
 
@@ -44,7 +44,7 @@ Chat Copilot is a powerful and telemetry-free extension for Visual Studio Code, 
 
 ## Installation
 
-- Install the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=cweijan.openai-chat) or search `ChatGPT Copilot` in VScode Extensions and click install.
+- Install the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=cweijan.chat-copilot) or search `ChatGPT Copilot` in VScode Extensions and click install.
 - Reload Visual Studio Code after installation.
 
 ## AI Services
@@ -259,8 +259,8 @@ We highly recommend installing the extension directly from the VS Code Marketpla
 ```sh
 npm run build
 npm run package
-code --uninstall-extension cweijan.openai-chat
-code --install-extension openai-chat-*.vsix
+code --uninstall-extension cweijan.chat-copilot
+code --install-extension chat-copilot-*.vsix
 ```
 
 </details>
